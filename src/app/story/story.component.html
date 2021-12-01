@@ -1,0 +1,28 @@
+<div class="story">
+  <swiper [config]="config" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
+    <ng-template swiperSlide>
+      <figure>
+        <div class="story-img active">
+          <img src="../../assets/profile.jpg" alt="">
+        </div>
+        <figcaption>Random User</figcaption>
+      </figure>
+    </ng-template>
+    <ng-template swiperSlide>
+      <figure>
+        <div class="story-img active">
+          <img src="../../assets/profile.jpg" alt="">
+        </div>
+        <figcaption>Random User</figcaption>
+      </figure>
+    </ng-template>
+    <ng-template swiperSlide *ngFor="let i of slides">
+      <figure>
+        <div class="story-img">
+          <img src="../../assets/profile.jpg" alt="">
+        </div>
+        <figcaption>Random User</figcaption>
+      </figure>
+    </ng-template>
+  </swiper>
+</div>

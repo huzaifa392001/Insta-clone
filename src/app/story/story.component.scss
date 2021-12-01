@@ -1,0 +1,39 @@
+.story {
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #dbdbdb;
+
+  swiper {
+    padding: 15px 10px;
+
+    figure {
+      text-align: center;
+      margin: 0;
+      cursor: pointer;
+
+      .story-img {
+        padding: 2px;
+        overflow: hidden;
+        width: fit-content;
+        margin: 0 auto;
+        border: 2px solid #dbdbdb;
+        border-radius: 100%;
+
+        &.active {
+          border: 2px solid #CD1818;
+        }
+
+        img {
+          border-radius: 100%;
+        }
+      }
+
+      figcaption {
+        margin-top: 5px;
+        font-size: 12px;
+        color: #262626;
+        font-weight: 500;
+      }
+    }
+  }
+}

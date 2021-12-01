@@ -1,0 +1,87 @@
+<header>
+  <nav class="navbar navbar-expand px-0 w-100">
+    <div class="container justify-content-between">
+      <a class="navbar-brand">
+        <img src="../../assets/logo.png" alt="">
+      </a>
+      <form class="d-flex justify-content-center w-100">
+        <div class="input-cont">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <i class="fas fa-search"></i>
+        </div>
+      </form>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link p-0" routerLink="/home"><i class="fas fa-home"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link p-0"><i class="fab fa-facebook-messenger"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link p-0"><i class="far fa-plus-square"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link p-0"><i class="far fa-compass"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link p-0 position-relative">
+              <i (click)="toggleNoti()"  class="far fa-heart"></i>
+              <div class="noti position-absolute" *ngIf="noti">
+                <ul>
+                  <h4>Recent</h4>
+                  <li class="d-flex w-100" *ngFor="let i of notification">
+                    <img width="50" height="50" src="../../assets/profile.jpg" alt="" class="profile-img mr-2">
+                    <h6><span>RandomUser</span> Liked your photo.</h6>
+                    <span>40m</span>
+                    <img src="../../assets/profile.jpg" alt="" class="ml-auto react-photo">
+                  </li>
+                </ul>
+              </div>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link p-0 position-relative">
+              <img class="header-profile" (click)="toggleMenu()"  src="../../assets/profile.jpg" alt="">
+              <!-- <i class="far fa-user m-0"></i> -->
+              <div class="menu position-absolute" *ngIf="menu">
+                <ul>
+                  <li>
+                    <a class="d-flex">
+                      <i class="far fa-user me-3"></i>
+                      <p>Profile</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="d-flex">
+                      <i class="far fa-bookmark"></i>
+                      <p>Saved</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="d-flex">
+                      <i class="fas fa-cog"></i>
+                      <p>Settings</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="d-flex">
+                      <i class="fas fa-random"></i>
+                      <p>Switch Accounts</p>
+                    </a>
+                  </li>
+                  <div class="line"></div>
+                  <li>
+                    <a>
+                      <p>Log out</p>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
