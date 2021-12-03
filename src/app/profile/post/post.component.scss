@@ -1,0 +1,33 @@
+figure {
+  margin: 0;
+  position: relative;
+  cursor: pointer;
+
+  &:hover{
+    .interacted{
+      opacity: 1;
+    }
+  }
+
+  .interacted {
+    opacity: 0;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba($color: #000000, $alpha: 0.35);
+
+    i {
+      color: #fff;
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 20px;
+      margin: 0;
+      margin-left: 5px;
+      color: #fff;
+    }
+  }
+}

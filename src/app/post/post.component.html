@@ -2,7 +2,7 @@
   <div class="post-card-header d-flex justify-content-between">
     <div class="profile d-flex">
       <img src="../../assets/profile.jpg" alt="">
-      <h6>Random User</h6>
+      <h6 routerLink="/profile">Random User</h6>
     </div>
     <i class="fas fa-ellipsis-h"></i>
   </div>
@@ -35,20 +35,20 @@
       <p>
         <img src="../../assets/profile.jpg" alt="">
         Liked By
-        <a>Random User 2</a>
+        <a routerLink="/profile">Random User 2</a>
         and
         <a>8 others</a>
       </p>
     </div>
     <div class="comment-box">
       <p class="caption">
-        <a>Random User</a>
+        <a routerLink="/profile">Random User</a>
         This is a random Comment
       </p>
       <a class="view-comment">View all <span>{{comments.length}}</span> Comments</a>
       <div *ngFor="let i of comments; let indexof = index" class="mt-2 top-comment d-flex justify-content-between">
         <p>
-          <a>Random User 2</a>
+          <a routerLink="/profile">Random User 2</a>
           This is a Random comment from user 2
         </p>
         <i (click)="heartCommentClick(indexof)" [ngClass]="heartComment ? 'fas' : 'far'" class="far fa-heart"></i>

@@ -3,12 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path:'home',
+    path:'',
     loadChildren:()=>import('./feed/feed.module').then(m=>m.FeedModule)
   },
   {
+    path:'profile',
+    loadChildren:()=>import('./profile/profile.module').then(m=>m.ProfileModule)
+  },
+  {
     path:'',
-    redirectTo:'home',
+    redirectTo:'',
     pathMatch:'full'
   },
 ];

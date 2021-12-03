@@ -9,6 +9,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { StoryComponent } from './story/story.component';
 import { SwiperModule } from 'swiper/angular';
 import { PostComponent } from './post/post.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { SuggestionsComponent } from './suggestions/suggestions.component';
+import { FooterComponent } from './footer/footer.component';
+import { ProfileComponent } from './profile/profile.component';
+import { UserDetailsComponent } from './profile/user-details/user-details.component';
+import { PostDetailComponent } from './post-detail/post-detail.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +22,13 @@ import { PostComponent } from './post/post.component';
     FeedComponent,
     HeaderComponent,
     StoryComponent,
-    PostComponent
+    PostComponent,
+    SidebarComponent,
+    SuggestionsComponent,
+    FooterComponent,
+    ProfileComponent,
+    UserDetailsComponent,
+    PostDetailComponent,
   ],
   imports: [
     BrowserModule,

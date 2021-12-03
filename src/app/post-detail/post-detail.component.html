@@ -1,0 +1,63 @@
+<div class="post-detail">
+  <div class="contain">
+    <div class="post">
+      <div class="d-flex h-100">
+        <div class="img-cont">
+          <figure class="m-0 h-100">
+            <img src="../../assets/post.jpg" alt="" class="w-100 h-100">
+          </figure>
+        </div>
+        <div class="content">
+          <div class="head">
+            <div class="d-flex justify-content-between">
+              <div class="d-flex profile">
+                <img src="../../assets/profile.jpg" alt="">
+                <h6 routerLink="/profile">random_user</h6>
+                <h5>Following</h5>
+              </div>
+              <i class="fas fa-ellipsis-h"></i>
+            </div>
+          </div>
+          <div class="line"></div>
+          <div class="comment-area">
+
+          </div>
+          <div class="footer">
+            <div class="line"></div>
+            <div class="post-card-content">
+              <div class="d-flex justify-content-between interactable">
+                <div class="d-flex">
+                  <i (click)="heartClick()" [ngClass]="heart ? 'fas' : 'far'" class="mr-3 far fa-heart"></i>
+                  <i class="mr-3 far fa-comment"></i>
+                  <i class="far fa-paper-plane"></i>
+                </div>
+                <div class="share">
+                  <i (click)="bookmarkClick()" [ngClass]="bookmark ? 'fas' : 'far'" class="far fa-bookmark"></i>
+                </div>
+              </div>
+              <div class="d-flex justify-content-between likes">
+                <p>
+                  <img src="../../assets/profile.jpg" alt="">
+                  Liked By
+                  <a routerLink="/profile">Random User 2</a>
+                  and
+                  <a>8 others</a>
+                </p>
+              </div>
+            </div>
+            <div class="line"></div>
+            <div class="comment">
+              <form action="">
+                <div class="input-cont">
+                  <i class="far fa-smile"></i>
+                  <input type="text" placeholder="Add a Comment...">
+                  <button disabled>Post</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
