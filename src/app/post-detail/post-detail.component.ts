@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common'
 
 @Component({
   selector: 'app-post-detail',
@@ -8,10 +9,12 @@ import { Component, OnInit } from '@angular/core';
 export class PostDetailComponent implements OnInit {
 
   comment: boolean = false;
-  comments = [1, 2]
+  comments = [1,2,3,4,5,6,7,8,9,10]
   heart: boolean = false;
   bookmark: boolean = false;
-  constructor() { }
+  constructor(
+    private location : Location
+  ) { }
 
   ngOnInit(): void {
   }
@@ -21,5 +24,9 @@ export class PostDetailComponent implements OnInit {
   }
   bookmarkClick() {
     this.bookmark = !this.bookmark;
+  }
+
+  back() {
+    this.location.back();
   }
 }

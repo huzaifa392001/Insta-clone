@@ -11,6 +11,10 @@ const routes: Routes = [
     loadChildren:()=>import('./profile/profile.module').then(m=>m.ProfileModule)
   },
   {
+    path:'post',
+    loadChildren:()=>import('./post-detail/post-detail.module').then(m=>m.PostDetailModule)
+  },
+  {
     path:'',
     redirectTo:'',
     pathMatch:'full'

@@ -15,8 +15,16 @@ export class StoryComponent implements OnInit {
   }
 
   config: SwiperOptions = {
-    slidesPerView: 7.5,
+    slidesPerView: 3,
     spaceBetween: 10,
+    breakpoints:{
+      768:{
+        slidesPerView:7.5,
+      },
+      400:{
+        slidesPerView:4.5
+      }
+    }
   };
 
   onSwiper(swiper: any) {
@@ -24,6 +32,10 @@ export class StoryComponent implements OnInit {
   }
   onSlideChange() {
     console.log('slide change');
+  }
+
+  sliderBreakpoint={
+
   }
 
 }

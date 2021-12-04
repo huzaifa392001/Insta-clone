@@ -1,4 +1,5 @@
 <div class="post-detail">
+  <i (click)="back()" class="fas fa-times fa-2x"></i>
   <div class="contain">
     <div class="post">
       <div class="d-flex h-100">
@@ -20,7 +21,38 @@
           </div>
           <div class="line"></div>
           <div class="comment-area">
-
+            <div class="caption">
+              <div class="d-flex">
+                <figure class="profile">
+                  <img src="../../assets/profile.jpg" alt="">
+                </figure>
+                <p>
+                  <a routerLink="profile">
+                    Random User
+                  </a>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.<br> In, ad? Sit aperiam cumque quaerat
+                  provident!<br>
+                  Ipsum laudantium rem modi iusto quis facilis impedit perspiciatis! Dicta.<br>Lorem ipsum dolor sit amet
+                  consectetur adipisicing elit.<br> Totam autem minus nulla illo odit temporibus repellat quam expedita,
+                  aliquid molestiae.<br> Tenetur laborum porro perferendis ducimus.
+                </p>
+              </div>
+              <p class="float-right">5h ago</p>
+            </div>
+            <div class="comment mt-5" *ngFor="let i of comments">
+              <div class="d-flex">
+                <figure class="profile">
+                  <img src="../../assets/profile.jpg" alt="">
+                </figure>
+                <p>
+                  <a routerLink="profile">
+                    Random User
+                  </a>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt, quidem.
+                </p>
+              </div>
+              <p class="float-right">5h ago</p>
+            </div>
           </div>
           <div class="footer">
             <div class="line"></div>
