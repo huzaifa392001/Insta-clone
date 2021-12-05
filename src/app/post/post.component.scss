@@ -1,5 +1,4 @@
 .post {
-  margin-top: 30px;
   margin-bottom: 30px;
   background-color: #fff;
   border-radius: 5px;
@@ -7,6 +6,7 @@
 
   .post-card-header {
     padding: 15px 20px;
+    border-bottom: 1px solid #dbdbdb;
 
     .profile {
       align-items: center;

@@ -15,6 +15,9 @@ import { FooterComponent } from './footer/footer.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UserDetailsComponent } from './profile/user-details/user-details.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,11 @@ import { PostDetailComponent } from './post-detail/post-detail.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    SwiperModule
+    HttpClientModule,
+    SwiperModule,
+    ReactiveFormsModule,
+    FormsModule,
+    InfiniteScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent]

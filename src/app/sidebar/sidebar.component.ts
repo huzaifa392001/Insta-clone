@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../services/http.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
+  user: any;
+  constructor(
+    private httpService: HttpService,
+  ) { }
 
   ngOnInit(): void {
+    this.getData();
+  }
+
+  getData() {
+    this.httpService.get('').subscribe((res: any) => {
+      this.user = res.results[0];
+    })
   }
 
 }

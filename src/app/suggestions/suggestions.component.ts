@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../services/http.service';
 
 @Component({
   selector: 'app-suggestions',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SuggestionsComponent implements OnInit {
 
-  constructor() { }
+  user: any;
+  constructor(
+    private httpService: HttpService,
+  ) { }
 
   ngOnInit(): void {
+    this.getData();
+  }
+
+  getData() {
+    this.httpService.get('?results=5').subscribe((res: any) => {
+      this.user = res.results;
+    })
   }
 
 }

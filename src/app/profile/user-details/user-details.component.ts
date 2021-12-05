@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'app-user-details',
@@ -7,8 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserDetailsComponent implements OnInit {
 
-  constructor() { }
+  user: any;
+
+  constructor(
+    private httpService: HttpService
+  ) { }
 
   ngOnInit(): void {
+    this.getData();
+  }
+
+  getData() {
+    this.httpService.get('').subscribe((res: any) => {
+      this.user = res.results[0];
+    })
   }
 }

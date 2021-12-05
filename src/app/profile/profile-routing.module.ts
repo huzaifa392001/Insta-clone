@@ -8,12 +8,12 @@ const routes: Routes = [
     component:ProfileComponent,
     children:[
       {
-        path:'post',
+        path:'',
         loadChildren:()=>import('./post/post.module').then(m=>m.PostModule)
       },
       {
         path:'',
-        redirectTo:"post",
+        redirectTo:"",
         pathMatch:'full'
       }
     ]
