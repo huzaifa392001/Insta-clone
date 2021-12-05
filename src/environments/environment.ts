@@ -6,7 +6,7 @@ const apiVersion = 'api/';
 const apiUrl = 'https://randomuser.me/';
 export const environment = {
   production: false,
-  apiUrl: apiUrl + apiVersion,
+  apiurl: apiUrl + apiVersion,
 };
 
 /*

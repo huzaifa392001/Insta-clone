@@ -12,7 +12,7 @@ export class HttpService {
   post(serviceName: any, data: any) {
     const headers = new HttpHeaders();
     const options = { headers, withCredintials: false };
-    const url = environment.apiUrl + serviceName;
+    const url = environment.apiurl + serviceName;
 
     return this.http.post(url, data, options);
   }
@@ -20,7 +20,7 @@ export class HttpService {
   get(serviceName: string, data?: any) {
     const header = new HttpHeaders();
     const options = { headers: header, withCredintials: false };
-    const url = environment.apiUrl + serviceName;
+    const url = environment.apiurl + serviceName;
 
     return this.http.get(url, options);
   }
@@ -28,7 +28,7 @@ export class HttpService {
   put(serviceName: string, data: any) {
     const header = new HttpHeaders();
     const options = { headers: header, withCredintials: false };
-    const url = environment.apiUrl + serviceName;
+    const url = environment.apiurl + serviceName;
 
     return this.http.get(url, options);
   }
@@ -36,7 +36,7 @@ export class HttpService {
   delete(serviceName: string, data: any) {
     const header = new HttpHeaders();
     const options = { headers: header, withCredintials: false };
-    const url = environment.apiUrl + serviceName;
+    const url = environment.apiurl + serviceName;
 
     return this.http.get(url, options);
   }
