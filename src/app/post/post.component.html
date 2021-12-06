@@ -1,76 +1,76 @@
-<div class="post-cont">
-  <div class="post" *ngFor="let i of user;let indexOf = index">
-    <div class="post-card-header d-flex justify-content-between">
-      <div class="profile d-flex">
+<div class="post-cont" infinite-scroll (scrolled)="onScrollDown($event)">
+  <div class=" post" *ngFor="let i of user;let indexOf = index">
+  <div class="post-card-header d-flex justify-content-between">
+    <div class="profile d-flex">
+      <img src="{{i.picture.large}}" alt="">
+      <h6 routerLink="/profile">{{i.name.first + ' ' + i.name.last}}</h6>
+    </div>
+    <i class="fas fa-ellipsis-h"></i>
+  </div>
+  <div class="post-card-img">
+    <swiper [config]="config" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
+      <ng-template swiperSlide>
+        <figure>
+          <img src="{{photo + '?random='+ indexOf}}" alt="">
+        </figure>
+      </ng-template>
+      <ng-template swiperSlide>
+        <figure>
+          <img src="{{photo + '?random='+ indexOf + 1}}" alt="">
+        </figure>
+      </ng-template>
+    </swiper>
+  </div>
+  <div class="post-card-content">
+    <div class="d-flex justify-content-between interactable">
+      <div class="d-flex">
+        <i (click)="heartClick()" [ngClass]="heart ? 'far' : 'fas'" class="mr-3 far fa-heart"></i>
+        <i routerLink="/post" class="mr-3 far fa-comment"></i>
+        <i class="far fa-paper-plane"></i>
+      </div>
+      <div class="share">
+        <i (click)="bookmarkClick()" [ngClass]="bookmark ? 'fas' : 'far'" class="far fa-bookmark"></i>
+      </div>
+    </div>
+    <div class="d-flex justify-content-between likes">
+      <p>
         <img src="{{i.picture.large}}" alt="">
-        <h6 routerLink="/profile">{{i.name.first + ' ' + i.name.last}}</h6>
-      </div>
-      <i class="fas fa-ellipsis-h"></i>
+        Liked By
+        <a routerLink="/profile">{{i.name.first + ' ' + i.name.last}}</a>
+        and
+        <a>8 others</a>
+      </p>
     </div>
-    <div class="post-card-img">
-      <swiper [config]="config" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
-        <ng-template swiperSlide>
-          <figure>
-            <img src="{{photo + '?random='+ indexOf}}" alt="">
-          </figure>
-        </ng-template>
-        <ng-template swiperSlide>
-          <figure>
-            <img src="{{photo + '?random='+ indexOf + 1}}" alt="">
-          </figure>
-        </ng-template>
-      </swiper>
-    </div>
-    <div class="post-card-content">
-      <div class="d-flex justify-content-between interactable">
-        <div class="d-flex">
-          <i (click)="heartClick()" [ngClass]="heart ? 'far' : 'fas'" class="mr-3 far fa-heart"></i>
-          <i routerLink="/post" class="mr-3 far fa-comment"></i>
-          <i class="far fa-paper-plane"></i>
-        </div>
-        <div class="share">
-          <i (click)="bookmarkClick()" [ngClass]="bookmark ? 'fas' : 'far'" class="far fa-bookmark"></i>
-        </div>
-      </div>
-      <div class="d-flex justify-content-between likes">
+    <div class="comment-box">
+      <p class="caption">
+        <a routerLink="/profile">{{i.name.first + ' ' + i.name.last}}</a>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, aliquid!
+      </p>
+      <a class="view-comment">View all <span>{{comments.length}}</span> Comments</a>
+      <div *ngFor="let cmnt of comments; let indexof = index" class="mt-2 top-comment d-flex justify-content-between">
         <p>
-          <img src="{{i.picture.large}}" alt="">
-          Liked By
-          <a routerLink="/profile">{{i.name.first + ' ' + i.name.last}}</a>
-          and
-          <a>8 others</a>
+          <a routerLink="/profile">Random User</a>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, in.
         </p>
+        <i (click)="heartCommentClick(indexof)" [ngClass]="heartComment ? 'fas' : 'far'" class="far fa-heart"></i>
       </div>
-      <div class="comment-box">
-        <p class="caption">
-          <a routerLink="/profile">{{i.name.first + ' ' + i.name.last}}</a>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, aliquid!
-        </p>
-        <a class="view-comment">View all <span>{{comments.length}}</span> Comments</a>
-        <div *ngFor="let i of comments; let indexof = index" class="mt-2 top-comment d-flex justify-content-between">
-          <p>
-            <a routerLink="/profile">{{i.name}}</a>
-            {{i.comment}}
-          </p>
-          <i (click)="heartCommentClick(indexof)" [ngClass]="heartComment ? 'fas' : 'far'" class="far fa-heart"></i>
-        </div>
-        <p class="duration">
-          <span>{{i.registered.age}}</span>
-          Days ago
-        </p>
-      </div>
-    </div>
-    <div class="line"></div>
-    <div class="comment">
-      <form action="">
-        <div class="input-cont">
-          <i class="far fa-smile"></i>
-          <form action="" [formGroup]="commentInput" (ngSubmit)="commentFunction()">
-            <input type="text" formControlName='commentField' placeholder="Add a Comment...">
-            <button [disabled]='!commentInput.valid'>Post</button>
-          </form>
-        </div>
-      </form>
+      <p class="duration">
+        <span>{{i.registered.age}}</span>
+        Days ago
+      </p>
     </div>
   </div>
+  <div class="line"></div>
+  <div class="comment">
+    <form action="">
+      <div class="input-cont">
+        <i class="far fa-smile"></i>
+        <form action="" [formGroup]="commentInput">
+          <input type="text" formControlName='commentField' placeholder="Add a Comment...">
+          <button [disabled]='!commentInput.valid'>Post</button>
+        </form>
+      </div>
+    </form>
+  </div>
+</div>
 </div>

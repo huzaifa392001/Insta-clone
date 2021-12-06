@@ -4,6 +4,11 @@
   background-color: #000;
   z-index: 10;
 
+  @media screen and (max-width:768px) {
+    background-color: #fafafa;
+    position: absolute;
+  }
+
   i {
     &.fa-times {
       position: absolute;
@@ -11,6 +16,10 @@
       right: 20px;
       color: #fff;
       cursor: pointer;
+
+      @media screen and (max-width:768px) {
+        top: 30px;
+      }
     }
   }
 
@@ -19,23 +28,38 @@
     height: 100vh;
     margin: auto;
 
+    @media screen and (max-width:992px) {
+      width: 95vw;
+    }
+
     .post {
       background-color: #fff;
       height: 95vh;
       margin-top: 2.5vh;
+
+      @media screen and (max-width:768px) {
+        background-color: #fafafa;
+      }
     }
   }
 
   .img-cont {
-    min-width: 60%;
-    max-width: 60%;
+    width: 60%;
+
+    @media screen and (max-width:768px) {
+      width: 100%;
+    }
   }
 
   .content {
     position: relative;
-    min-width: 40%;
-    max-width: 40%;
+    width: 40%;
     overflow-y: hidden;
+
+    @media screen and (max-width:768px) {
+      width: 100%;
+      border: 1px solid #8e8e8e;
+    }
 
     .head {
       .d-flex {
@@ -99,6 +123,10 @@
       overflow-y: auto;
       height: -webkit-fill-available;
 
+      @media screen and(max-width:768px) {
+        max-height: 500px;
+      }
+
       .caption,
       .comment {
         .profile {
@@ -135,6 +163,10 @@
       position: absolute;
       bottom: 0;
       width: 100%;
+
+      @media screen and (max-width:768px) {
+        padding-bottom: 30px;
+      }
 
       .post-card-content {
         padding: 15px 20px;

@@ -14,17 +14,13 @@ export class PostComponent implements OnInit {
   commentInput!: FormGroup;
   post = [1, 2, 3, 4, 5]
   comment: boolean = false;
-  comments = [
-    {
-      'name':'',
-      'comment' : ''
-    }
-  ];
+  comments = [1,2,3,4];
   heartComment: boolean = false;
   heart: boolean = false;
   bookmark: boolean = false;
   user: any;
   photo: any = "https://picsum.photos/800/800";
+  sum:any = 10;
 
   constructor(
     private httpService: HttpService,
@@ -33,7 +29,7 @@ export class PostComponent implements OnInit {
 
   ngOnInit(): void {
     this.formBuild()
-    this.getData();
+    this.getData(this.sum);
   }
 
   config: SwiperOptions = {
@@ -42,8 +38,8 @@ export class PostComponent implements OnInit {
     pagination: { clickable: true },
   };
 
-  getData() {
-    this.httpService.get('?results=10').subscribe((res: any) => {
+  getData(num:any) {
+    this.httpService.get('?results='+num).subscribe((res: any) => {
       this.user = res.results;
       console.log(this.user);
     })
@@ -55,10 +51,11 @@ export class PostComponent implements OnInit {
     })
   }
 
-  commentFunction(){
-    if(this.commentInput.value){
-
-    }
+  onScrollDown(ev: any) {
+    console.log("scrolled down!!", ev);
+    this.sum += 10
+    this.getData(this.sum)
+    console.log(this.user)
   }
 
   onSwiper(swiper: any) {

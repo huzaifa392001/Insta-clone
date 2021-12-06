@@ -2,18 +2,18 @@
   <i (click)="back()" class="fas fa-times fa-2x"></i>
   <div class="contain">
     <div class="post">
-      <div class="d-flex h-100">
+      <div class="d-md-flex h-100">
         <div class="img-cont">
           <figure class="m-0 h-100">
-            <img src="../../assets/post.jpg" alt="" class="w-100 h-100">
+            <img src="{{photo}}" alt="" class="w-100 h-100">
           </figure>
         </div>
         <div class="content">
           <div class="head">
             <div class="d-flex justify-content-between">
               <div class="d-flex profile">
-                <img src="../../assets/profile.jpg" alt="">
-                <h6 routerLink="/profile">random_user</h6>
+                <img src="{{user.picture.large}}" alt="">
+                <h6 routerLink="/profile">{{user.name.first + user.dob.age}}</h6>
                 <h5>Following</h5>
               </div>
               <i class="fas fa-ellipsis-h"></i>
@@ -24,34 +24,35 @@
             <div class="caption">
               <div class="d-flex">
                 <figure class="profile">
-                  <img src="../../assets/profile.jpg" alt="">
+                  <img src="{{user.picture.large}}" alt="">
                 </figure>
                 <p>
                   <a routerLink="profile">
-                    Random User
+                    {{user.name.first + user.dob.age}}
                   </a>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.<br> In, ad? Sit aperiam cumque quaerat
                   provident!<br>
-                  Ipsum laudantium rem modi iusto quis facilis impedit perspiciatis! Dicta.<br>Lorem ipsum dolor sit amet
+                  Ipsum laudantium rem modi iusto quis facilis impedit perspiciatis! Dicta.<br>Lorem ipsum dolor sit
+                  amet
                   consectetur adipisicing elit.<br> Totam autem minus nulla illo odit temporibus repellat quam expedita,
                   aliquid molestiae.<br> Tenetur laborum porro perferendis ducimus.
                 </p>
               </div>
-              <p class="float-right">5h ago</p>
+              <p class="float-right">{{user.registered.age}}h ago</p>
             </div>
-            <div class="comment mt-5" *ngFor="let i of comments">
+            <div class="comment mt-5" *ngFor="let i of users">
               <div class="d-flex">
                 <figure class="profile">
-                  <img src="../../assets/profile.jpg" alt="">
+                  <img src="{{i.picture.large}}" alt="">
                 </figure>
                 <p>
                   <a routerLink="profile">
-                    Random User
+                    {{i.name.first + i.dob.age}}
                   </a>
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt, quidem.
                 </p>
               </div>
-              <p class="float-right">5h ago</p>
+              <p class="float-right">{{i.registered.age}}h ago</p>
             </div>
           </div>
           <div class="footer">
@@ -69,9 +70,9 @@
               </div>
               <div class="d-flex justify-content-between likes">
                 <p>
-                  <img src="../../assets/profile.jpg" alt="">
+                  <img src="{{user.picture.large}}" alt="">
                   Liked By
-                  <a routerLink="/profile">Random User 2</a>
+                  <a routerLink="/profile">{{user.name.first + ' ' + user.name.last}}</a>
                   and
                   <a>8 others</a>
                 </p>
